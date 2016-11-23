@@ -1,6 +1,8 @@
 @import "rotator";
 
 $font: "Droid Sans", sans-serif;
+$header-bg-color: #2b2b2b;
+$bg-color: #12242d;
 
 * {
   margin: 0;
@@ -14,7 +16,7 @@ a {
 }
 
 body {
-  background-color: #BB464B;
+  background-color: $bg-color;
 }
 
 #user-panel {
@@ -85,7 +87,7 @@ header {
     height: 50px;
   }
   height: 100px;
-  background-color: #F35B39;
+  background-color: $header-bg-color;
   #header-content {
     @media screen and (min-width: 960px){
       width: 960px;
@@ -96,7 +98,6 @@ header {
     padding-left: 40px;
     position: relative;
     box-sizing: border-box;
-    background-color: cadetblue;
     a {
       color: white;
       font-family: $font;
@@ -154,7 +155,7 @@ header {
           }
           &:hover > a {
             border-bottom: 3px solid white;
-            background-color: #5FB8A4;
+            //background-color: $bg-color;
           }
           > ul {
             z-index: 9997;
