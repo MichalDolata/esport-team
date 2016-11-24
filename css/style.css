@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
 #rotator {
   position: relative;
   height: 375px;
@@ -56,13 +57,17 @@
 * {
   margin: 0;
   padding: 0;
-  font-size: 16px; }
+  font-size: 16px;
+  font-family: 'Titillium Web', sans-serif;
+  color: white; }
 
 a {
   border: 0;
-  text-decoration: none; }
+  text-decoration: none;
+  color: inherit; }
 
 body {
+  position: relative;
   background-color: #12242d; }
 
 #user-panel {
@@ -134,26 +139,20 @@ header {
     @media screen and (min-width: 960px) {
       header #header-content {
         width: 960px; } }
-    header #header-content a {
-      color: white;
-      font-family: "Droid Sans", sans-serif; }
-      header #header-content a > img {
-        height: 100%; }
+    header #header-content a > img {
+      height: 100%; }
     header #header-content #menu-panel {
       position: absolute;
-      right: 10px;
-      top: 5px;
-      color: white; }
+      right: 20px;
+      top: 10px; }
+      header #header-content #menu-panel i {
+        font-size: 28px; }
       @media screen and (max-width: 760px) {
         header #header-content #menu-panel {
-          top: 15px;
+          top: 12px;
           right: 20px; } }
-      header #header-content #menu-panel a {
-        font-size: 0.8em; }
       header #header-content #menu-panel #menu-button {
-        float: left;
-        margin-right: 10px;
-        display: block; }
+        margin-right: 30px; }
         @media screen and (min-width: 760px) {
           header #header-content #menu-panel #menu-button {
             display: none; } }
@@ -191,24 +190,30 @@ header {
             position: absolute;
             padding: 5px;
             background-color: white; }
-            header #header-content nav > ul > li > ul > li {
-              padding: 5px; }
+            header #header-content nav > ul > li > ul li {
+              color: black;
+              padding: 5px 8px; }
     header #header-content #search {
+      height: 28px;
+      line-height: 28px;
       padding: 10px 20px 0 0;
       position: absolute;
-      bottom: 5px;
+      bottom: 10px;
       right: 0; }
       @media screen and (max-width: 760px) {
         header #header-content #search {
           display: none; } }
       header #header-content #search input {
+        height: 28px;
         display: none;
         float: left;
         margin: 1px 8px 0 0;
-        padding: 3px;
+        padding: 3px 8px;
         font-size: 0.8em;
-        border: none; }
-      header #header-content #search img {
+        border: none;
+        box-sizing: border-box;
+        border-radius: 2px; }
+      header #header-content #search i {
         cursor: pointer; }
 
 #mobile-menu {
@@ -224,138 +229,146 @@ header {
     margin: 7px auto; }
     #mobile-menu #mobile-search input {
       float: left;
-      height: 25px;
+      height: 35px;
       width: 90%;
-      margin: 1px 8px 0 0;
-      padding: 3px;
+      margin: 1px 2% 0 0;
+      padding: 3px 8px;
       border: none;
-      font-size: 1.2em; }
-    #mobile-menu #mobile-search img {
+      border-radius: 2px;
+      font-size: 0.8em;
+      box-sizing: border-box; }
+    #mobile-menu #mobile-search i {
       cursor: pointer;
+      font-size: 20px;
       padding-top: 7px; }
+    #mobile-menu #mobile-search::after {
+      clear: both;
+      content: '';
+      display: block; }
   #mobile-menu ul {
     margin-top: 3px;
     list-style-type: none; }
     #mobile-menu ul li {
-      border-top: 1px solid white;
+      border-top: 1px solid #2b2b2b;
       width: 100%;
       text-align: center; }
       #mobile-menu ul li a {
         display: block;
         width: 100%;
         height: 100%;
-        padding: 8px;
-        font-family: "Droid Sans", sans-serif;
-        color: white; }
+        padding: 8px 0; }
 
 main {
   width: 960px;
-  margin: 0 auto;
-  box-shadow: black 0 0 2px; }
+  margin: 0 auto; }
   @media screen and (max-width: 960px) {
     main {
       width: 100%; } }
   main #content {
-    background-color: #5FB8A4;
     padding-bottom: 10px; }
-    main #content:after {
+    main #content > section {
+      margin-top: 15px; }
+    main #content .section-header {
+      margin-left: 20px; }
+      main #content .section-header span {
+        font-size: 26px;
+        font-weight: bold;
+        padding: 2px 12px;
+        background-color: #2b2b2b; }
+    main #content #news-section::after {
       content: '';
-      display: block;
-      clear: both; }
-    main #content .segment_header {
-      width: 100%;
-      background: #F35B39;
-      color: white;
-      font-family: "Droid Sans", sans-serif;
-      padding: 5px 0 5px 10px;
-      box-sizing: border-box;
-      box-shadow: black 0px 0px 5px; }
-    main #content .container, main #content .content-container, main #content #news-container, main #content #competitions-container {
+      clear: both;
+      display: block; }
+    main #content #news-section .news {
+      position: relative;
       float: left;
-      padding: 5px;
-      box-sizing: border-box; }
-    main #content .content-container {
-      float: none;
-      margin: 0 1px;
-      background-color: white; }
-      main #content .content-container .news {
+      width: 30.33%;
+      height: 150px;
+      box-sizing: border-box;
+      margin: 10px 1.5%;
+      background-position: center;
+      background-size: cover; }
+      main #content #news-section .news a {
+        display: block;
+        height: 100%;
         width: 100%;
-        height: 84px;
-        box-sizing: border-box;
-        border-top: 1px solid silver;
-        padding: 5px; }
-        main #content .content-container .news a {
-          color: black; }
-        main #content .content-container .news img {
-          height: 90%;
-          float: left;
-          margin-right: 10px; }
-        main #content .content-container .news div {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          height: 100%; }
-        main #content .content-container .news:first-child {
-          border: none; }
-        main #content .content-container .news:hover {
-          box-shadow: black 0 0 4px; }
-    main #content #news-container {
-      width: 70%; }
+        position: absolute;
+        left: 0px;
+        top: 0px; }
       @media screen and (max-width: 760px) {
-        main #content #news-container {
-          width: 100%; } }
-    main #content #competitions-container {
-      width: 30%; }
-      @media screen and (max-width: 760px) {
-        main #content #competitions-container {
-          width: 100%; } }
-      main #content #competitions-container .match {
-        font-family: "Droid Sans", sans-serif;
-        width: 90%;
-        max-width: 400px;
-        box-sizing: border-box;
-        margin: 5px auto; }
-        main #content #competitions-container .match .match-details {
-          text-align: center;
-          width: 90%;
-          margin: 0 auto; }
-          main #content #competitions-container .match .match-details .match-team {
-            display: inline-block;
-            width: 32%;
-            text-align: center; }
-            main #content #competitions-container .match .match-details .match-team img {
-              width: 90%; }
-          main #content #competitions-container .match .match-details .match-result {
-            text-align: center;
-            vertical-align: middle;
-            display: inline-block;
-            width: 30%;
-            font-size: 1.35em; }
-      main #content #competitions-container table {
-        font-family: "Droid Sans", sans-serif;
-        width: 90%;
-        margin: 0 auto;
-        border-collapse: collapse; }
-        main #content #competitions-container table td {
-          padding: 4px; }
-        main #content #competitions-container table td:nth-child(2) {
-          text-align: center; }
-        main #content #competitions-container table #table-ie {
-          background-color: #5F9EA0;
-          color: white;
-          font-weight: bold; }
-          main #content #competitions-container table #table-ie td:first-child {
-            border-top-left-radius: 2px;
-            border-bottom-left-radius: 2px; }
-          main #content #competitions-container table #table-ie td:last-child {
-            border-top-right-radius: 2px;
-            border-bottom-right-radius: 2px; }
+        main #content #news-section .news {
+          width: 47%; } }
+      @media screen and (max-width: 500px) {
+        main #content #news-section .news {
+          width: auto;
+          margin: 15px 5%;
+          float: none; } }
+      main #content #news-section .news::after {
+        content: "";
+        background: url("../images/wcg2006.jpg") center;
+        background-size: cover;
+        opacity: 0.4;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+        border-radius: 5px;
+        transition: all 0.5s linear; }
+      main #content #news-section .news:hover::after {
+        opacity: 0.6;
+        transform: scale(1.05); }
+      main #content #news-section .news h3 {
+        display: inline-block;
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
+        font-size: 22px;
+        text-shadow: 1px 1px 5px #2b2b2b; }
+    main #content #result-section .result {
+      background-color: rgba(66, 66, 66, 0.54);
+      margin: 15px 2% 0;
+      padding: 15px; }
+      main #content #result-section .result::after {
+        content: '';
+        clear: both;
+        display: block; }
+      main #content #result-section .result .tournament-info {
+        float: left; }
+        @media screen and (max-width: 500px) {
+          main #content #result-section .result .tournament-info div {
+            line-height: 42px;
+            font-size: 1.1em; }
+          main #content #result-section .result .tournament-info .event {
+            display: none; } }
+      main #content #result-section .result .result-details {
+        float: right;
+        margin-right: 50px; }
+        main #content #result-section .result .result-details > div {
+          float: left; }
+        main #content #result-section .result .result-details img {
+          height: 42px; }
+        main #content #result-section .result .result-details .score {
+          font-size: 32px;
+          height: 42px;
+          line-height: 42px;
+          font-weight: bold;
+          margin: 0 5px; }
 
 footer {
-  font-family: "Droid Sans", sans-serif;
   box-sizing: border-box;
   background-color: cadetblue;
   padding: 10px;
-  color: white;
-  box-shadow: black 0 0 5px; }
+  background-color: #2b2b2b;
+  width: 100%;
+  box-shadow: black 0 0 5px;
+  margin-top: 10px; }
+  footer > #footer-content {
+    margin: 0 auto;
+    width: 960px; }
+    @media screen and (max-width: 960px) {
+      footer > #footer-content {
+        width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

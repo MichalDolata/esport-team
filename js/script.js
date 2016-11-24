@@ -23,7 +23,7 @@ $(document).ready(function () {
         }
     );
 
-    $('#search').find('img').clicktoggle(
+    $('#search').find('i').clicktoggle(
         function() {
             $(this).siblings('input').animate({width: 'show'}, 200);
         },
