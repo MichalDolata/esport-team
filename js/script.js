@@ -45,7 +45,7 @@ $(document).ready(function () {
             $('#mobile-menu').stop().slideToggle(200);//css('display', 'block');
         },
         function() {
-            $('#mobile-menu').stop().slideToggle(200);;
+            $('#mobile-menu').stop().slideToggle(200);
         });
 
     (function() {

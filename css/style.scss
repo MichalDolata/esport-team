@@ -23,6 +23,10 @@ body {
   background-color: $bg-color;
 }
 
+input {
+  color: $header-bg-color;
+}
+
 #user-panel {
   display: none;
   position: fixed;
@@ -287,8 +291,8 @@ main {
           height: 100%;
           width: 100%;
           position: absolute;
-          left: 0px;
-          top: 0px;
+          left: 0;
+          top: 0;
         }
         @media screen and (max-width: 760px){
           width: 47%;
@@ -379,13 +383,11 @@ main {
         }
       }
     }
-
   }
 }
 
 footer {
   box-sizing: border-box;
-  background-color: cadetblue;
   padding: 10px;
   background-color: $header-bg-color;
   width: 100%;
@@ -398,5 +400,14 @@ footer {
     }
     margin: 0 auto;
     width: 960px;
+    i {
+      font-size: 24px;
+      margin-left: 7px;
+      opacity: 0.3;
+      transition: all 0.5s linear;
+      &:hover {
+        opacity: 1;
+      }
+    }
   }
 }
