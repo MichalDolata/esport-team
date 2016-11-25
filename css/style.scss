@@ -62,11 +62,9 @@ input {
     $panel-width: 60%;
     $panel-height: 300px;
     @media screen and (max-width: 760px) {
-      $panel-height: 500px;
-      width: $panel-width;
-      height: $panel-height;
-      margin-left: -($panel-width/2);
-      margin-top: -($panel-height/2);
+      $panel-height-mobile: 500px;
+      height: $panel-height-mobile;
+      margin-top: -($panel-height-mobile/2);
     }
     border-radius: 5px;
     position: absolute;
@@ -205,6 +203,14 @@ header {
              li {
               color: black;
               padding: 5px 8px;
+               transition: 0.2s background-color linear;
+               a {
+                 display: block;
+               }
+               &:hover {
+                 background-color: #2b2b2b;
+                 color: white;
+               }
             }
           }
         }
