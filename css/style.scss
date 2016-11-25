@@ -4,6 +4,14 @@
 $header-bg-color: #2b2b2b;
 $bg-color: #12242d;
 
+@mixin clearFix {
+  &::after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -33,6 +41,7 @@ input {
   height: 100%;
   width: 100%;
   z-index: 9998;
+
   #panel-background {
     position: absolute;
     width: 100%;
@@ -41,8 +50,24 @@ input {
     z-index: 1;
   }
   #panel-content {
+    i {
+      right: 10px;
+      top: 10px;
+      font-size: 24px;
+      display: block;
+      position: absolute;
+      color: #2b2b2b;
+      cursor: pointer;
+    }
     $panel-width: 60%;
-    $panel-height: 500px;
+    $panel-height: 300px;
+    @media screen and (max-width: 760px) {
+      $panel-height: 500px;
+      width: $panel-width;
+      height: $panel-height;
+      margin-left: -($panel-width/2);
+      margin-top: -($panel-height/2);
+    }
     border-radius: 5px;
     position: absolute;
     width: $panel-width;
@@ -53,14 +78,23 @@ input {
     margin-left: -($panel-width/2);
     margin-top: -($panel-height/2);
     z-index: 1000;
+
+    span {
+      font-size: 26px;
+      font-weight: bold;
+      padding: 2px 12px;
+      background-color: #2b2b2b;
+    }
+
+    form {
+      margin-top: 15px;
+    }
     > div {
       float: left;
       width: 50%;
       @media screen and (max-width: 760px) {
         width: 100%;
-        &:last-child {
-          display: none;
-        }
+        float: none;
       }
       padding: 10px;
       box-sizing: border-box;
@@ -80,7 +114,7 @@ input {
         width: 85px;
         padding: 5px;
         height: 45px;
-        background-color: cadetblue;
+        background-color: #2b2b2b;
         border: none;
         color: white;
       }
@@ -231,11 +265,7 @@ header {
       font-size: 20px;
       padding-top: 7px;
     }
-    &::after {
-      clear: both;
-      content: '';
-      display: block;
-    }
+    @include clearFix();
   }
   ul {
     margin-top: 3px;
@@ -253,6 +283,7 @@ header {
     }
   }
 }
+
 
 main {
   @media screen and (max-width: 960px){
@@ -277,11 +308,7 @@ main {
     }
 
     #news-section {
-      &::after {
-        content: '';
-        clear: both;
-        display: block;
-      }
+      @include clearFix();
       .news {
         position: relative;
         float: left;
@@ -345,11 +372,7 @@ main {
         margin: 15px 2% 0;
         padding: 15px;
 
-        &::after {
-          content: '';
-          clear: both;
-          display: block;
-        }
+        @include clearFix();
 
         .tournament-info {
           float: left;

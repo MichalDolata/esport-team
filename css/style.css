@@ -96,6 +96,27 @@ input {
     margin-left: -30%;
     margin-top: -250px;
     z-index: 1000; }
+    #user-panel #panel-content i {
+      right: 10px;
+      top: 10px;
+      font-size: 24px;
+      display: block;
+      position: absolute;
+      color: #2b2b2b;
+      cursor: pointer; }
+    @media screen and (max-width: 760px) {
+      #user-panel #panel-content {
+        width: 60%;
+        height: 500px;
+        margin-left: -30%;
+        margin-top: -250px; } }
+    #user-panel #panel-content span {
+      font-size: 26px;
+      font-weight: bold;
+      padding: 2px 12px;
+      background-color: #2b2b2b; }
+    #user-panel #panel-content form {
+      margin-top: 15px; }
     #user-panel #panel-content > div {
       float: left;
       width: 50%;
@@ -103,9 +124,8 @@ input {
       box-sizing: border-box; }
       @media screen and (max-width: 760px) {
         #user-panel #panel-content > div {
-          width: 100%; }
-          #user-panel #panel-content > div:last-child {
-            display: none; } }
+          width: 100%;
+          float: none; } }
     #user-panel #panel-content input {
       display: block;
       border-radius: 2px;
@@ -120,7 +140,7 @@ input {
         width: 85px;
         padding: 5px;
         height: 45px;
-        background-color: cadetblue;
+        background-color: #2b2b2b;
         border: none;
         color: white; }
 
@@ -279,8 +299,8 @@ main {
         padding: 2px 12px;
         background-color: #2b2b2b; }
     main #content #news-section::after {
-      content: '';
       clear: both;
+      content: '';
       display: block; }
     main #content #news-section .news {
       position: relative;
@@ -334,8 +354,8 @@ main {
       margin: 15px 2% 0;
       padding: 15px; }
       main #content #result-section .result::after {
-        content: '';
         clear: both;
+        content: '';
         display: block; }
       main #content #result-section .result .tournament-info {
         float: left; }

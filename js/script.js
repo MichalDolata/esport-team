@@ -2,7 +2,7 @@
  * Created by preb on 01.06.16.
  */
 // http://stackoverflow.com/questions/17583215/jquery-toggle-event-deprecated-what-to-use
-$.fn.clicktoggle = function(a, b) {
+$.fn.clickToggle = function(a, b) {
     return this.each(function() {
         var clicked = false;
         $(this).on('click', function() {
@@ -23,7 +23,7 @@ $(document).ready(function () {
         }
     );
 
-    $('#search').find('i').clicktoggle(
+    $('#search').find('i').clickToggle(
         function() {
             $(this).siblings('input').animate({width: 'show'}, 200);
         },
@@ -40,7 +40,11 @@ $(document).ready(function () {
         $('#user-panel').fadeOut(400);
     });
 
-    $('#menu-button').clicktoggle(
+    $('#close-button').click(function () {
+        $('#user-panel').fadeOut(400);
+    });
+
+    $('#menu-button').clickToggle(
         function() {
             $('#mobile-menu').stop().slideToggle(200);//css('display', 'block');
         },
@@ -58,37 +62,39 @@ $(document).ready(function () {
     })();
 
     function changeImage(newId) {
-        var active_button = $('#rotator-nav').find('.active');
-        var new_button = $('#rotator-nav').find('a').eq(newId);
+        var rotatorNav = $('#rotator-nav'),
+            activeButton = rotatorNav.find('.active'),
+            newButton = rotatorNav.find('a').eq(newId);
 
-        if(active_button[0] !== new_button[0]) {
+        if(activeButton[0] !== newButton[0]) {
             // change nav-button
-            active_button.removeClass('active');
-            new_button.addClass('active');
+            activeButton.removeClass('active');
+            newButton.addClass('active');
             // change image
-            var active_image = $('#rotator-content').find('a.active'),
-                new_image = $('#rotator-content').find('a').eq(newId);
+            var rotatorContent = $('#rotator-content'),
+                activeImage = rotatorContent.find('a.active'),
+                newImage = rotatorContent.find('a').eq(newId);
 
-            active_image.stop();
-            new_image.stop();
+            activeImage.stop();
+            newImage.stop();
             clearInterval(inter);
 
-            if(newId > active_button.index()) {
-                active_image.animate({left: -active_image.width()}, 500, function() {
-                    active_image.css('left', -960);
+            if(newId > activeButton.index()) {
+                activeImage.animate({left: -activeImage.width()}, 500, function() {
+                    activeImage.css('left', -960);
                 });
-                new_image.css('left', new_image.width());
-                new_image.animate({left: 0}, 500);
+                newImage.css('left', newImage.width());
+                newImage.animate({left: 0}, 500);
             } else {
-                active_image.animate({left: active_image.width()}, 500, function() {
-                    active_image.css('left', 960);
+                activeImage.animate({left: activeImage.width()}, 500, function() {
+                    activeImage.css('left', 960);
                 });
-                new_image.css('left', -new_image.width());
-                new_image.animate({left: 0}, 500);
+                newImage.css('left', -newImage.width());
+                newImage.animate({left: 0}, 500);
             }
 
-            active_image.removeClass('active');
-            new_image.addClass('active');
+            activeImage.removeClass('active');
+            newImage.addClass('active');
             inter = setInterval(intervalRotator, 7000)
         }
     }

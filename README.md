@@ -7,4 +7,4 @@
 - jQuery
 
 ## Live demo
-[Demo](http://dolata.me/demos/esport-team/)
+[Demo](https://michaldolata.github.io/esport-team/)
